@@ -22,7 +22,7 @@ def generate_script(subject, video_length, creativity, api_key):
         ]
     )
     # 如果是课程API需要加上openai_api_base = "https://api.aigc369.com/v1"
-    model = ChatOpenAI(openai_api_key=api_key, temperature=creativity)
+    model = ChatOpenAI(openai_api_key=api_key, temperature=creativity,openai_api_base = "https://api.aigc369.com/v1")
 
     title_chain = title_template | model
     script_chain = script_template | model
